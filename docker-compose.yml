@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
   api:
     restart: always
@@ -6,26 +6,30 @@ services:
     - 8080:8080
     #image: springio/demo
     build: ./
-    networks:
-    - backend
+#    networks:
+#    - backend
+    links:
+      - db:db
 
   web:
     restart: always
     ports:
     - 8000:8000
     #image: demo-web
-    build: ../volunteering-front-end
-    networks:
-    - backend
+    build: ../test
+#    networks:
+#    - backend
+    links:
+      - api:api
 
   db:
     restart: always
     ports:
-    - 3000:3036
+    - 3000:3306
     #image: demo-db
     build: ./src/main/docker/mysql
-    networks:
-    - backend
+#    networks:
+#    - backend
 
-networks:
-  backend:
+#networks:
+#  backend:

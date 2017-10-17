@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    ports:
+    - 8080:8080
+    image: demo-api
+    networks:
+    - backend
+
+  web:
+    ports:
+    - 8000:8000
+    image: demo-web
+    networks:
+    - backend
+
+  db:
+    ports:
+    - 3000:3036
+    image: demo-db
+    networks:
+    - backend

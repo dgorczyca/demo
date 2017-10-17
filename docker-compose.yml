@@ -1,13 +1,15 @@
 version: "3"
 services:
   api:
+    restart: always
     ports:
     - 8080:8080
-    image: demo-api
+    image: springio/demo
     networks:
     - backend
 
   web:
+    restart: always
     ports:
     - 8000:8000
     image: demo-web
@@ -15,8 +17,12 @@ services:
     - backend
 
   db:
+    restart: always
     ports:
     - 3000:3036
     image: demo-db
     networks:
     - backend
+
+networks:
+  backend:

@@ -4,7 +4,8 @@ services:
     restart: always
     ports:
     - 8080:8080
-    image: springio/demo
+    #image: springio/demo
+    build: ./
     networks:
     - backend
 
@@ -12,7 +13,8 @@ services:
     restart: always
     ports:
     - 8000:8000
-    image: demo-web
+    #image: demo-web
+    build: ../volunteering-front-end
     networks:
     - backend
 
@@ -20,7 +22,8 @@ services:
     restart: always
     ports:
     - 3000:3036
-    image: demo-db
+    #image: demo-db
+    build: ./src/main/docker/mysql
     networks:
     - backend
 

@@ -1,4 +1,4 @@
-version: "2"
+version: "2.1"
 services:
   api:
     restart: always
@@ -7,6 +7,9 @@ services:
     image: springio/demo
     networks:
     - backend
+    depends_on:
+      db:
+        condition: service_healthy
 
   web:
     restart: always
@@ -21,6 +24,11 @@ services:
     restart: always
     ports:
     - 3000:3306
+    healthcheck:
+      test: mysql --user=${USER_DB_USER:-root} --password=${USER_DB_PASSWORD:-root} -e "SELECT 1;" -N -s -r && exit 0 || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 10
     #image: demo-db
     build: ./src/main/docker/mysql
     networks:

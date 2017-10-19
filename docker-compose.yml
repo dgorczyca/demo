@@ -34,5 +34,26 @@ services:
     networks:
     - backend
 
+  andi-bot:
+    image: andigital/andi-bot
+    links:
+    - andi-bot-redis
+    ports:
+    - 3000:8080
+    volumes:
+    - ../andi-bot/:/andi-bot
+    environment:
+    - HUBOT_SLACK_TOKEN=${HUBOT_SLACK_TOKEN}
+    command: "bin/hubot_dev --adapter slack -r scripts/new_feature"
+    networks:
+    - backend
+
+  andi-bot-redis:
+    image: redis
+    ports:
+    - 6379:6379
+    networks:
+    - backend
+
 networks:
   backend:

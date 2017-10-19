@@ -23,7 +23,7 @@ services:
   db:
     restart: always
     ports:
-    - 3000:3306
+    - 3005:3306
     healthcheck:
       test: mysql --user=${USER_DB_USER:-root} --password=${USER_DB_PASSWORD:-root} -e "SELECT 1;" -N -s -r && exit 0 || exit 1
       interval: 30s

@@ -1,4 +1,4 @@
-package digital.and.demo.model;
+package digital.and.slackbot.volunteering.model;
 
 import org.junit.Before;
 import org.junit.Test;

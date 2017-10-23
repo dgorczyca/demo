@@ -1,12 +1,12 @@
-package digital.and.demo;
+package digital.and.slackbot.volunteering;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class VolbotApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(VolbotApplication.class, args);
 	}
 }

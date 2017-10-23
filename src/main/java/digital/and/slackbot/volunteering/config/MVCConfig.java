@@ -1,6 +1,6 @@
-package digital.and.demo.config;
+package digital.and.slackbot.volunteering.config;
 
-import digital.and.demo.model.User;
+import digital.and.slackbot.volunteering.model.User;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;

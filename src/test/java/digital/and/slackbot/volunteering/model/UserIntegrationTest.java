@@ -1,6 +1,6 @@
-package digital.and.demo.model;
+package digital.and.slackbot.volunteering.model;
 
-import digital.and.demo.repository.UserRepository;
+import digital.and.slackbot.volunteering.repository.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

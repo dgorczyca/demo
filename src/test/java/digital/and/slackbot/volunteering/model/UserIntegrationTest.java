@@ -38,7 +38,7 @@ public class UserIntegrationTest {
     @Test
     public void saveUserTest() {
         entityManager.persist(user);
-        userRepository.findByFirstname("John");
+        userRepository.findByFirstName("John");
         assertThat(user.getLastName(),is("Doe"));
     }
 }

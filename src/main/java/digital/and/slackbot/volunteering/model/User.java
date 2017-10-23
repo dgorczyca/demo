@@ -2,8 +2,10 @@ package digital.and.slackbot.volunteering.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Data
@@ -13,11 +15,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToMany(mappedBy="users")
-    private List<Event> employees;
-
-    private String firstname;
-    private String lastname;
-    private String nationality;
-    private String age;
+    private String slackId;
+    private String firstName;
+    private String lastName;
 }

@@ -15,7 +15,6 @@ services:
     restart: always
     ports:
     - 8000:80
-    #image: demo-web
     build: ../test
     networks:
     - backend
@@ -29,10 +28,11 @@ services:
       interval: 30s
       timeout: 10s
       retries: 10
-    #image: demo-db
     build: ./src/main/docker/mysql
     networks:
     - backend
+    volumes:
+    - slack-mysql:/var/lib/mysql
 
   andi-bot:
     image: andigital/andi-bot
@@ -54,6 +54,9 @@ services:
     - 6379:6379
     networks:
     - backend
+
+volumes:
+  slack-mysql:
 
 networks:
   backend:

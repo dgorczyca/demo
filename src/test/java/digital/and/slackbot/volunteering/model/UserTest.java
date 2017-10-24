@@ -13,19 +13,17 @@ public class UserTest {
     public void setup() {
         user = new User();
         user.setId((long)1);
-        user.setAge("20");
-        user.setFirstname("John");
-        user.setLastname("Doe");
-        user.setNationality("British");
+        user.setSlackId("123hij");
+        user.setFirstName("John");
+        user.setLastName("Doe");
     }
 
     @Test
     public void testUserFieldsNotNull() {
         assertNotNull(user.getId());
-        assertNotNull(user.getAge());
-        assertNotNull(user.getFirstname());
-        assertNotNull(user.getLastname());
-        assertNotNull(user.getNationality());
+        assertNotNull(user.getFirstName());
+        assertNotNull(user.getLastName());
+        assertEquals(user.getSlackId(), "123hij");
     }
 
 }

@@ -30,16 +30,15 @@ public class UserIntegrationTest {
     @Before
     public void setup() {
         user = new User();
-        user.setAge("20");
-        user.setFirstname("John");
-        user.setLastname("Doe");
-        user.setNationality("British");
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        user.setSlackId("123hij");
     }
 
     @Test
     public void saveUserTest() {
         entityManager.persist(user);
-        userRepository.findByFirstname("John");
-        assertThat(user.getLastname(),is("Doe"));
+        userRepository.findByFirstName("John");
+        assertThat(user.getLastName(),is("Doe"));
     }
 }

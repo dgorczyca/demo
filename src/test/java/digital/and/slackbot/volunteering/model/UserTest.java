@@ -3,7 +3,9 @@ package digital.and.slackbot.volunteering.model;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertNotNull;
 
 public class UserTest {
 
@@ -13,17 +15,16 @@ public class UserTest {
     public void setup() {
         user = new User();
         user.setId((long)1);
-        user.setSlackId("123hij");
-        user.setFirstName("John");
-        user.setLastName("Doe");
+        user.setSlackUsername("jsmith");
+        user.setSlackId("U7NAPBC7M");
+        user.setRealName("John Smith");
     }
 
     @Test
     public void testUserFieldsNotNull() {
         assertNotNull(user.getId());
-        assertNotNull(user.getFirstName());
-        assertNotNull(user.getLastName());
-        assertEquals(user.getSlackId(), "123hij");
+        assertThat(user.getRealName(),is("John Smith"));
+        assertThat(user.getSlackId(),is("U7NAPBC7M"));
     }
 
 }

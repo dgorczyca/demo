@@ -16,6 +16,6 @@ public class User {
     private Long id;
 
     private String slackId;
-    private String firstName;
-    private String lastName;
+    private String slackUsername;
+    private String realName;
 }

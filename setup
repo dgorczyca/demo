@@ -1,0 +1,8 @@
+#! /usr/bin/bash
+
+# start with cloning this repo git clone git@github.com:dgorczyca/demo.git, then clone the rest
+
+git clone git@github.com:alecb7/test.git ../test
+
+git clone git@github.com:ANDigital/andi-bot-volunteering.git ../andi-bot
+
